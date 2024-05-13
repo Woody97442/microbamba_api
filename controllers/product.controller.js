@@ -19,7 +19,7 @@ module.exports.OneProduct = (req, res) => {
   const { id } = req.params;
 
   productModel
-    .findById(id)
+    .findById({ _id: id })
     .exec()
     .then((doc) => {
       if (!doc) {
