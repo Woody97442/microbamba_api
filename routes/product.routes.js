@@ -6,13 +6,21 @@ const {
   productByConsole,
 } = require("../controllers/product.controller.js");
 
+const html = `
+<h1>Bienvenue sur l'API Microbamba</h1>
+<p>Les routes disponible sont : </p>
+<ul>
+  <li>/product/all</li>
+  <li>/product/:id</li>
+  <li>/product/console/:console</li>
+</ul>
+`;
+
+app.get("/", (res) => {
+  res.send(html);
+});
 router.get("/product/all", allProducts);
 router.get("/product/:id", OneProduct);
 router.get("/product/console/:console", productByConsole);
 
 module.exports = router;
-
-// route api
-// http://localhost:5000/product/all
-// http://localhost:5000/product/:id
-// http://localhost:5000/product/console/:console

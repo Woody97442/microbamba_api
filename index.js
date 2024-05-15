@@ -17,8 +17,4 @@ app.use("/image", express.static("public/image"));
 const productRoutes = require("./routes/product.routes");
 app.use("/", productRoutes);
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
 module.exports = app;
