@@ -11,7 +11,7 @@ require("./config/db");
 
 // Middlewares
 app.use(cors());
-app.use("/image", express.static("public/image"));
+app.use("/image", express.static(__dirname + "/public/image"));
 
 // Routes
 const productRoutes = require("./routes/product.routes");
