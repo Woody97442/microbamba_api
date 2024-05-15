@@ -18,16 +18,14 @@ const productRoutes = require("./routes/product.routes");
 app.use("/", productRoutes);
 
 const html = `
-<h1>Bienvenue sur l'API Microbamba</h1>
-<p>Les routes disponible sont : </p>
-<ul>
-  <li>/product/all</li>
-  <li>/product/:id</li>
-  <li>/product/console/:console</li>
-</ul>
+Bienvenue sur l'API Microbamba
+Les routes disponible sont :
+  /product/all
+  /product/:id
+  /product/console/:console
 `;
 
-app.get("/", (res) => {
+app.get("/", (res, req) => {
   res.send(html);
 });
 
