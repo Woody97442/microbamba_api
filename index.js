@@ -17,16 +17,10 @@ app.use("/image", express.static("public/image"));
 const productRoutes = require("./routes/product.routes");
 app.use("/", productRoutes);
 
-const html = `
-Bienvenue sur l'API Microbamba
-Les routes disponible sont :
-  /product/all
-  /product/:id
-  /product/console/:console
-`;
-
 app.get("/", (res, req) => {
-  res.send(html);
+  res.send(
+    "Bienvenue sur l'API Microbamba\nLes routes disponible sont :\n/product/all\n/product/:id\n/product/console/:console\n"
+  );
 });
 
 module.exports = app;
