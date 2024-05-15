@@ -18,7 +18,9 @@ const productRoutes = require("./routes/product.routes");
 app.use("/", productRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.send(
+    "Bienvenue sur l'API Microbamba\nLes routes disponible sont :\n/product/all\n/product/:id\n/product/console/:console\n"
+  );
 });
 
 module.exports = app;
