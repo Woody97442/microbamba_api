@@ -16,7 +16,7 @@ const html = `
 </ul>
 `;
 
-app.get("/", (res) => {
+router.get("/", (res) => {
   res.send(html);
 });
 router.get("/product/all", allProducts);
