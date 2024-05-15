@@ -19,7 +19,7 @@ app.use("/", productRoutes);
 
 app.get("/", (req, res) => {
   res.send(
-    "Bienvenue sur l'API Microbamba</br>Les routes disponible sont :\n/product/all\n/product/:id\n/product/console/:console\n"
+    "Bienvenue sur l'API Microbamba</br>Les routes disponible sont :</br>/product/all</br>/product/:id</br>/product/console/:console</br>"
   );
 });
 
