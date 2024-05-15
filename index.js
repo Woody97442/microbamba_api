@@ -13,6 +13,13 @@ require("./config/db");
 app.use(cors());
 app.use("/image", express.static("public/image"));
 
-// Routes
-const productRoutes = require("./routes/product.routes");
-app.use("/", productRoutes);
+// Export de la fonction startServer
+module.exports = {
+  startServer: () => {
+    app.use("/", productRoutes);
+    const port = process.env.PORT || 3000;
+    app.listen(port, () => {
+      console.log(`Server running on port ${port}`);
+    });
+  },
+};
