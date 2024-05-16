@@ -10,7 +10,11 @@ require("dotenv").config({ path: "./.env" });
 require("./config/db");
 
 // Middlewares
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use("/image", express.static(__dirname + "/public/image"));
 
 // Routes
